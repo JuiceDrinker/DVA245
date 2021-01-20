@@ -24,7 +24,7 @@ class Sender(EventHandler):
         return
     #public methods
     def handleEvent(self):
-        #TODO: implement
+        #TODO: implement code
         return
     def retrieveMessages(self):
         #TODO implement - return messages and empty the messages list

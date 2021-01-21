@@ -8,6 +8,7 @@ Run senderTest and see that the tests pass
 """
 from EventHandler import EventHandler
 import random
+import copy
 
 class Sender(EventHandler):
     def __init__(self):
@@ -25,8 +26,11 @@ class Sender(EventHandler):
     #public methods
     def handleEvent(self):
         #TODO: implement
+        self._createMessages()
         return
     def retrieveMessages(self):
         #TODO implement - return messages and empty the messages list
-        return []
+        retrieved = copy.deepcopy(self._messages)
+        self._messages.clear()
+        return retrieved
         

@@ -32,6 +32,6 @@ class Sender(EventHandler):
         return
 
     def retrieveMessages(self):
-        msgList = copy.copy(self._messages)  # Shallow copy
-        self._messages.clear()  # Clear list
+        msgList = self._messages  # Create alias to instance variable
+        self._messages = []  # Clear list (new empty list)
         return msgList

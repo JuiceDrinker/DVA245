@@ -10,12 +10,14 @@ from EventHandler import EventHandler
 import random
 import copy
 
+
 class Sender(EventHandler):
     def __init__(self):
         self._messageN = 0
         self._messages = []
         self._maxMessagesInPeriod = 10
         return
+
     # non-public method
     def _createMessages(self):
         nMessages = random.randint(1, self._maxMessagesInPeriod)
@@ -23,14 +25,13 @@ class Sender(EventHandler):
             self._messageN += 1
             self._messages.append("message" + str(self._messageN))
         return
-    #public methods
+
+    # public methods
     def handleEvent(self):
-        #TODO: implement
         self._createMessages()
         return
+
     def retrieveMessages(self):
-        #TODO implement - return messages and empty the messages list
-        retrieved = copy.deepcopy(self._messages)
-        self._messages.clear()
-        return retrieved
-        
+        msgList = self._messages  # Create alias to instance variable
+        self._messages = []  # Clear list (new empty list)
+        return msgList

@@ -46,13 +46,13 @@ class LeakyStack:
     def top(self):
         """Return (but do not remove) the element at the top of the stack. Raise Exception if the stack is empty."""
         if self.isEmpty():
-            raise Empty('No elements in stack.')
+            raise Exception('No elements in stack.')
         return self._stack[-1]  # Return last element
 
     def pop(self):
         """Remove and return the element at the top of the stack. Raise Exception if the stack is empty."""
         if self.isEmpty():
-            raise Empty('No elements in stack.')
+            raise Exception('No elements in stack.')
         return self._stack.pop()  # Return top element on stack
 
     def push(self, e):

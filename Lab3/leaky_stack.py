@@ -24,8 +24,7 @@
 #
 
 
-from testReport import testReport
-
+from Lab3.testReport import testReport
 
 class LeakyStack:
     """LIFO Leaky Stack implementation using a Python list as underlying storage."""
